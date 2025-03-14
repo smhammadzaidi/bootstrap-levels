@@ -1,6 +1,18 @@
-<p>
-  <a href="https://bootstrap-levels.matchthetarget.com/levels/07_dynamic_list_group" target="_blank">Target</a>
-</p>
 
 <%# The below code creates an array of 10 random names %>
 <%= names = Array.new(10) { Faker::Name.unique.name  } %>
+
+<div class="container">
+<div class="row">
+<div class="offset-md-4 col-md-4">
+<ul class="list-group">
+<% names.each do |a_name| %>
+<li class="list-group-item d-flex justify-content-between">
+<div><%=a_name%></div>
+<div> <span class="badge rounded-pill text-bg-primary">
+<%=rand(100)%>
+</span>
+</div>
+</li>
+<% end %>
+</ul>
